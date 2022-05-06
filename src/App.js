@@ -7,6 +7,7 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Blogs from './Pages/Blogs/Blogs';
 import ProductDetails from "./Pages/ProductDeails/ProductDetails";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
+import AddProducts from './Pages/AddProducts/AddProducts';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/inventory/:serviceId" element={<ProductDetails></ProductDetails>}></Route>
         <Route path="/manage-inventory" element={<ManageInventory></ManageInventory>}></Route>
+        <Route path="/addproduct" element={<AddProducts></AddProducts>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

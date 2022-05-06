@@ -43,9 +43,7 @@ const ProductDetails = () => {
         </div>
        <div className=" mx-auto">
        <button className="my-2 btn btn-outline-dark mx-auto">Delivered</button>
-        <Link to="/addproduct" className="my-2 btn btn-outline-danger mx-2">
-          Add new item
-        </Link>
+        
         <Link
           to="/manage-inventory"
           className="my-2 btn btn-outline-danger mx-2"
