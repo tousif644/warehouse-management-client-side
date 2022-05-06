@@ -20,20 +20,29 @@ const ProductDetails = () => {
         Product Details
         <hr className="w-25 me-auto mx-auto " />
       </h2>
-      <div className="container  mx-auto">
-        <div class="card">
-          <div class="card-header">Product Name : {services.name}</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <img src={services.image} alt="" className="img-fluid w-50" />
-            </li>
-            <li class="list-group-item">Product price : {services.price}</li>
-            <li class="list-group-item">Rating : {services.rating}</li>
-            <li class="list-group-item">Supplier name : {services.supplier}</li>
-            <li class="list-group-item">in Stock : {services.quantity}</li>
-          </ul>
+      <div className="container w-75  mx-auto">
+        <div className="row  mx-auto">
+          <div className="col w-50">
+            <div class="card">
+              <div class="card-header">Product Name : {services.name}</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <img src={services.image} alt="" className="img-fluid w-50" />
+                </li>
+                <li class="list-group-item">
+                  Product price : {services.price}
+                </li>
+                <li class="list-group-item">Rating : {services.rating}</li>
+                <li class="list-group-item">
+                  Supplier name : {services.supplier}
+                </li>
+                <li class="list-group-item">in Stock : {services.quantity}</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <button className="my-2 btn btn-outline-dark ">Delivered</button>
+       <div className=" mx-auto">
+       <button className="my-2 btn btn-outline-dark mx-auto">Delivered</button>
         <Link to="/addproduct" className="my-2 btn btn-outline-danger mx-2">
           Add new item
         </Link>
@@ -43,6 +52,7 @@ const ProductDetails = () => {
         >
           Manage inventory
         </Link>
+       </div>
       </div>
     </div>
   );
