@@ -1,0 +1,5 @@
+.login-bg {
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);    border-radius: 5px;
+    width: 30%;
+    color: white;
+}
