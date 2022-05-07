@@ -7,7 +7,6 @@ import Loading from "../Loading/Loading";
 import auth from "./../../../firebase.init";
 import { Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
 
 const RequireAuth = ({ children }) => {
   const [user, loading] = useAuthState(auth);
@@ -28,7 +27,7 @@ if(error) {
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  
+
   if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
     return (
       <div>
