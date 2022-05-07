@@ -24,13 +24,25 @@ const Header = () => {
             <Nav className="me-0 mx-auto ">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-
+              <Nav.Link as={Link} to="/myitem">myItem</Nav.Link>
               
                 {user ? (
                   <Nav.Link as={Link} to="/manage-inventory">Manage inventory</Nav.Link>
                 ) : (
                   <Nav.Link></Nav.Link>
                 )}
+                {user ? (
+                  <Nav.Link as={Link} to="/addproduct">Add Product</Nav.Link>
+                ) : (
+                  <Nav.Link></Nav.Link>
+                )}
+
+                {/* {user ? (
+                  <Nav.Link as={Link} to="/myitem">My Item</Nav.Link>
+                ) : (
+                  <Nav.Link></Nav.Link>
+                )} */}
+
 
                 {user ? (
                   <button
@@ -44,6 +56,7 @@ const Header = () => {
                     Login
                   </Nav.Link>
                 )}
+                
             </Nav>
           </Navbar.Collapse>
         </Container>

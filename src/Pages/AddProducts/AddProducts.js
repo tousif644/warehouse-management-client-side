@@ -69,7 +69,7 @@ const AddProducts = () => {
                 placeholder="Photo URL"
               />
               <br />
-              <input type="submit" />
+              <input type="submit" className="btn btn-outline-warning" />
             </form>
           </div>
         </div>

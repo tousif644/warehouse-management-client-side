@@ -10,7 +10,6 @@ const useServiceDetails = (serviceId) => {
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [serviceId]);
-  console.log(serviceId);
   return [services];
 };
 
