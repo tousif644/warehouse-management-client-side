@@ -1,6 +1,6 @@
 # Farn's Warehouse
 
-# Live site link : 
+# Live site link : https://warehouse-management-c58a2.web.app/
 
 # Why you should you use this website ?
 
