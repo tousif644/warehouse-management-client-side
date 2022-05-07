@@ -20,7 +20,7 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post("http://localhost:5000/farnsOrder", order).then((response) => {
+    axios.post("https://farns-warehouse.herokuapp.com/farnsOrder", order).then((response) => {
       const { data } = response;
       if (data.insertedId) {
         alert("Your order booked!!!!");

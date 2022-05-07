@@ -7,7 +7,7 @@ const Products = () => {
 
   //hook
   useEffect(() => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://farns-warehouse.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data))

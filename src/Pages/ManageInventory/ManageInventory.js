@@ -5,7 +5,7 @@ const ManageInventory = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://farns-warehouse.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -14,7 +14,7 @@ const ManageInventory = () => {
   const handleDelete = (id) => {
     const proceed = "Are you sure you want to delete ?";
     if (proceed) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://farns-warehouse.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
