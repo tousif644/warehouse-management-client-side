@@ -20,10 +20,10 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post("https://localhost:5000/order", order).then((response) => {
+    axios.post("http://localhost:5000/farnsOrder", order).then((response) => {
       const { data } = response;
       if (data.insertedId) {
-        toast("Your order booked!!!!");
+        alert("Your order booked!!!!");
         event.target.reset();
       }
     });
