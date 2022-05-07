@@ -19,6 +19,8 @@ const MyItem = () => {
     };
     getOrders();
   }, [user]);
+  console.log(user);
+
   // console.log(orders.map(order => console.log(order.email)));
   return (
     <div>
