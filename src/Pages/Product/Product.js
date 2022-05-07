@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ products }) => {
   const { _id, name, price, rating, description, image } = products;
@@ -10,8 +10,8 @@ const Product = ({ products }) => {
     navigate(`/inventory/${id}`);
   };
   const navigateCheckout = (serviceId) => {
-    navigate(`/order/${serviceId}`)
-  }
+    navigate(`/order/${serviceId}`);
+  };
 
   return (
     <div>
@@ -25,22 +25,23 @@ const Product = ({ products }) => {
             </h5>
             <p class="card-text">{description}</p>
             <p>Rating : {rating}</p>
-              <>
-                <button
-                  onClick={() => navigateDetails(_id)}
-                  className="btn btn-outline-danger"
-                >
-                  Update now
-                </button>
-              </>
-              <>
-                <button
-                  onClick={() => navigateCheckout(_id)}
-                  className="btn btn-outline-dark"
-                >
-                  Add Now
-                </button>
-              </>
+
+            <>
+              <button
+                onClick={() => navigateCheckout(_id)}
+                className="btn btn-outline-dark "
+              >
+                Add Now
+              </button>
+            </>
+            <>
+              <button
+                onClick={() => navigateDetails(_id)}
+                className="btn btn-outline-danger mx-2"
+              >
+                Update now
+              </button>
+            </>
           </div>
         </div>
       </div>

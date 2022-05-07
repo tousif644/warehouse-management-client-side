@@ -18,7 +18,7 @@ const ManageInventory = () => {
         method: "DELETE",
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => data);
       const remaining = products.filter((product) => product._id !== id);
       setProducts(remaining);
     }
@@ -38,8 +38,8 @@ const ManageInventory = () => {
         </p>
       ))}
       <Link to="/addproduct" className="my-2 btn btn-outline-danger mx-2">
-          Add new item
-        </Link>
+        Add new item
+      </Link>
     </div>
   );
 };

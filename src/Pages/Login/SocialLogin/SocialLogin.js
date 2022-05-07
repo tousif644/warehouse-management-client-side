@@ -14,7 +14,7 @@ const SocialLogin = () => {
         navigate('/');
     }
     if(error) {
-        console.log(error)
+        alert(error);
     }
   return (
     <div>

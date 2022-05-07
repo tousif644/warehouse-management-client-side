@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./../../../firebase.init";
 import { signOut } from "firebase/auth";
@@ -22,41 +22,53 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-0 mx-auto ">
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-              <Nav.Link as={Link} to="/myitem">myItem</Nav.Link>
-              
-                {user ? (
-                  <Nav.Link as={Link} to="/manage-inventory">Manage inventory</Nav.Link>
-                ) : (
-                  <Nav.Link></Nav.Link>
-                )}
-                {user ? (
-                  <Nav.Link as={Link} to="/addproduct">Add Product</Nav.Link>
-                ) : (
-                  <Nav.Link></Nav.Link>
-                )}
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
+              </Nav.Link>
+              {user ? (
+                <Nav.Link as={Link} to="/myitem">
+                  myItem
+                </Nav.Link>
+              ) : (
+                <Nav.Link></Nav.Link>
+              )}
 
-                {/* {user ? (
+              {user ? (
+                <Nav.Link as={Link} to="/manage-inventory">
+                  Manage inventory
+                </Nav.Link>
+              ) : (
+                <Nav.Link></Nav.Link>
+              )}
+              {user ? (
+                <Nav.Link as={Link} to="/addproduct">
+                  Add Product
+                </Nav.Link>
+              ) : (
+                <Nav.Link></Nav.Link>
+              )}
+
+              {/* {user ? (
                   <Nav.Link as={Link} to="/myitem">My Item</Nav.Link>
                 ) : (
                   <Nav.Link></Nav.Link>
                 )} */}
 
-
-                {user ? (
-                  <button
-                    onClick={handleSignOut}
-                    className="btn btn-outline-warning"
-                  >
-                    Sign out
-                  </button>
-                ) : (
-                  <Nav.Link as={Link} to="/login">
-                    Login
-                  </Nav.Link>
-                )}
-                
+              {user ? (
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-outline-warning"
+                >
+                  Sign out
+                </button>
+              ) : (
+                <Nav.Link as={Link} to="/login">
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

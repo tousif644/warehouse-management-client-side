@@ -2,10 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import MyItemView from "./MyItemView/MyItemView";
 
 const MyItem = () => {
   const [user] = useAuthState(auth);
-  console.log(user.email);
 
   // getting orders value via axios
   const [orders, setOrders] = useState([]);
@@ -16,15 +16,20 @@ const MyItem = () => {
       const url = `http://localhost:5000/farnsOrder?email=${email}`;
       const { data } = await axios.get(url);
       setOrders(data);
-    }
+    };
     getOrders();
   }, [user]);
-  console.log(orders);
-
-  
+  // console.log(orders.map(order => console.log(order.email)));
   return (
     <div>
-      <h1>You total ordered : {orders.length}</h1>
+      <h1>You total ordered : {orders.length} item</h1>
+      {orders.map((order) => (
+        <div className="container">
+          <div className="row row-cols-2">
+            <MyItemView key={order._id} orders={order}></MyItemView>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
