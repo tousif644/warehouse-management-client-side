@@ -21,14 +21,14 @@ const RequireAuth = ({ children }) => {
   if (sending) {
     return <Loading></Loading>;
   }
-  
+
 if(error) {
   alert('something wrong')
 }
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-
+  
   if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
     return (
       <div>
@@ -42,7 +42,7 @@ if(error) {
             <button
               onClick={async () => {
                 await sendEmailVerification();
-                toast("Verification email sent");
+                <p> verification email sent</p>
               }}
             >
               Send verification email
